@@ -1,0 +1,23 @@
+Package: NTIDSRSABE
+Date: 2021-09-14
+Title: An Reference-Scaled Average Bioequivalence Procedure For Therapeutic Index Drug
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Zhengyu",
+           family = "Wu",
+           role = c("aut", "cre","ctb"),
+           email = "zhengyuwu888@163.com")
+Description: An Reference-Scaled Average Bioequivalence Procedure For Therapeutic Index Drug.
+    Implemented are "RSABE" and "ABE" and "Sw.Rate".
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
+Imports:
+    gmodels,
+    magrittr,
+    dplyr,
+    PowerTOST
+Depends: 
+    R (>= 2.10)
