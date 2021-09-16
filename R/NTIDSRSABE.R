@@ -107,8 +107,8 @@ NTIDSRSABE<-function(Data){
   MODEOUT<-gmodels::estimable(modelRilat,cm=c("(Intercept)"=1,Sequence2=0.5),conf.int=0.9)
   Estimate=MODEOUT$Estimate
   SE<-MODEOUT$Std.
-  CIL=MODEOUT$Lower.CI
-  CIU=MODEOUT$Upper.CI
+  CIL=exp(MODEOUT$Lower.CI)
+  CIU=exp(MODEOUT$Upper.CI)
   Pointest=exp(Estimate)
   x=Estimate**2-SE**2
   boundx<-max(abs(CIL),abs(CIU))**2
