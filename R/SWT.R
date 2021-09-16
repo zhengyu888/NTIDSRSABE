@@ -34,13 +34,13 @@ else {
   msewT  <- aovCVT["Residuals", "Mean Sq"]
   S2WT<-msewT
   SWT<-sqrt(S2WT)
-  DfCVT  <- aovCVT["Residuals", "Df"]
+  DFCVT  <- aovCVT["Residuals", "Df"]
   CVwT   <- PowerTOST::mse2CV(msewT)
   names(S2WT)<-c("S2WT")
   names(SWT)<-c("SWT")
-  names(DfCVT)<-c("DfCVT")
+  names(DFCVT)<-c("DFCVT")
   names(CVwT)<-c("CVwT")
-  ResultSWT<-c(S2WT,SWT,DfCVT,CVwT)
+  ResultSWT<-c(S2WT,SWT,DFCVT,CVwT)
   ResultSWT<-data.frame(ResultSWT)
   ResultSWT<-t(ResultSWT)
   return(ResultSWT)

@@ -32,13 +32,13 @@ SWR<-function(Data){
   msewR  <- aovCVR["Residuals", "Mean Sq"]
   S2WR<-msewR
   SWR<-sqrt(S2WR)
-  DfCVR  <- aovCVR["Residuals", "Df"]
+  DFCVR  <- aovCVR["Residuals", "Df"]
   CVwR   <- PowerTOST::mse2CV(msewR)
   names(S2WR)<-c("S2WR")
   names(SWR)<-c("SWR")
-  names(DfCVR)<-c("DfCVR")
+  names(DFCVR)<-c("DFCVR")
   names(CVwR)<-c("CVwR")
-  ResultSWR<-c(S2WR,SWR,DfCVR,CVwR)
+  ResultSWR<-c(S2WR,SWR,DFCVR,CVwR)
   ResultSWR<-data.frame(ResultSWR)
   ResultSWR<-t(ResultSWR)
   return(ResultSWR)
