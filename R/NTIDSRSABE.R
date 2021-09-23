@@ -107,11 +107,13 @@ NTIDSRSABE<-function(Data){
   MODEOUT<-gmodels::estimable(modelRilat,cm=c("(Intercept)"=1,Sequence2=0.5),conf.int=0.9)
   Estimate=MODEOUT$Estimate
   SE<-MODEOUT$Std.
+  Lower.CI<-MODEOUT$Lower.CI
+  Upper.CI<-MODEOUT$Upper.CI
   CIL=exp(MODEOUT$Lower.CI)
   CIU=exp(MODEOUT$Upper.CI)
   Pointest=exp(Estimate)
   x=Estimate**2-SE**2
-  boundx<-max(abs(CIL),abs(CIU))**2
+  boundx<-max(abs(Lower.CI),abs(Upper.CI))**2
   theta=((log(1/0.9))/(0.1))**2
   y=-(theta*S2WR)
   boundy=y*DfCVR/qchisq(0.95,DfCVR)
