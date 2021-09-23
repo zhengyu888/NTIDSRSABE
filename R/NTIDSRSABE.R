@@ -113,7 +113,7 @@ NTIDSRSABE<-function(Data){
   x=Estimate**2-SE**2
   boundx<-max(abs(CIL),abs(CIU))**2
   theta=((log(1/0.9))/(0.1))**2
-  y=theta*S2WR
+  y=-(theta*S2WR)
   boundy=y*DfCVR/qchisq(0.95,DfCVR)
   critbound=(x+y)+sqrt(((boundx - x)**2) +((boundy - y)**2) )
   names(Estimate) <- c("Estimate")
